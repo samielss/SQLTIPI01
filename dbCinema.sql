@@ -4,8 +4,6 @@ create database dbCinema;
 
 use dbCinema;
 
-show
-
 create table tbFuncionarios (codigo int, nome varchar(100), email varchar (100), telCel char (10));
 
 insert into tbFuncionarios(codigo,nome,email,telCel)values(1,'Francisco Albuquerque','franciscoalbuquerque@hotmail.com','95284-7852');

@@ -1,8 +1,12 @@
+-- apagando o banco de dados
 drop database dbZoologico;
 
--- Crie uma database chamada ZOOLOGICO:
+-- criando o banco de dados
 create database dbZoologico;
-use database dbZoologico;
+
+-- acess database
+use dbZoologico;
+
 -- Na database ZOOLOGICO, crie uma tabela chamada ANIMAIS com os seguintes campos:
 create table tbAnimais(codigo int, tipo char(13), nome char(30), idade int, valor decimal(10,2));
 
@@ -24,9 +28,26 @@ select * from tbAnimais;
 select tipo, nome from tbAnimais;
 
 -- Escreva um comando que exiba apenas as colunas TIPO, NOME e IDADE da tabela ANIMAIS apresentando todos os registros da tabela.
-select tipo, nome e idade from tbAnimais;
+select tipo, nome, idade from tbAnimais;
 
--- Escreva um comando que  
+-- Escreva um comando que exiba apenas as colunas TIPO e NOME  da tabela ANIMAIS apresentando todos os registros. Apresente a legenda da coluna TIPO com o alias [Tipo de Animal] e a coluna com o alias [Nome do animal].
+select tipo as 'Tipo de Animal', nome as 'Nome do Animal' from tbAnimais;
+
+--  Escreva um comando que exiba apenas as colunas TIPO, NOME e IDADE da tabela ANIMAIS apresentando todos os registros. Apresente a legenda da coluna TIPO com o alias [Tipo de Animal], da coluna nome com o alias [Nome do Animal] e da coluna IDADE com o alias [Tempo de Vida]. 
+select tipo as 'Tipo de Animal', nome as 'Nome do Animal', idade as 'Tempo de Vida' from tbAnimais;
+
+--Escreva um comando que apresente os dados da tabela Animais da seguinte forma:
+select 'Animal Domestico' as 'Procedência', tipo as 'Tipo de Animal', nome as 'Nome do Animal', idade as 'Tempo de Vida' from tbAnimais;
+
+-- Escreva um comando que apresente os dados da tabela ANIMAIS da seguinte forma:
+
+select tipo as 'Tipo', nome as 'Nome', idade as 'Idade', valor as 'Valor Original', valor*1.10 as 'Valor de Venda' from tbAnimais;
+
+--  Escreva um comando que apresente os dados da tabela ANIMAIS como vemos a seguir, apresentando uma vez os dados repetidos. 
+select distinct tipo, valor as 'Valor Original', valor*1.10 as 'Valor de Venda' from tbAnimais;
+
+
+
 
 
 
